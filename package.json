@@ -1,0 +1,31 @@
+{
+  "name": "edgio-video-browser-example",
+  "scripts": {
+    "deploy": "edgio deploy",
+    "dev": "next",
+    "build": "next build",
+    "start": "next start",
+    "format": "prettier --write '**/*' --ignore-unknown"
+  },
+  "dependencies": {
+    "next": "^13.4.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@edgio/cli": "^7.0.19",
+    "@edgio/core": "^7.0.19",
+    "@edgio/next": "^7.0.19",
+    "@edgio/prefetch": "^7.0.19",
+    "@edgio/react": "^7.0.19",
+    "@edgio/rum": "^7.0.4",
+    "@heroicons/react": "^1.0.6",
+    "autoprefixer": "^10.4.7",
+    "classnames": "^2.3.1",
+    "node-fetch": "^3.2.8",
+    "postcss": "^8.4.13",
+    "prettier": "^2.6.2",
+    "prettier-plugin-tailwindcss": "^0.1.11",
+    "tailwindcss": "^3.0.24"
+  }
+}
