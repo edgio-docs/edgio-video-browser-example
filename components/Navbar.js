@@ -1,11 +1,12 @@
 import Link from 'next/link'
 import Prefetch from '@edgio/react/Prefetch'
 import { createNextDataURL } from '@edgio/next/client'
+import { includeCacheMisses } from './prefetchConfig'
 
 const Navbar = () => {
   return (
     <Link passHref href="/">
-      <Prefetch url={createNextDataURL({ href: '/' })}>
+      <Prefetch url={createNextDataURL({ href: '/' })} includeCacheMisses={includeCacheMisses}>
         <div className="mt-10 flex flex-row items-center justify-start gap-x-2">
           <img src="/logo/white.svg" width="75px" />
           <img src="/plus.png" height={10 * 0.8} width={10 * 0.8} />

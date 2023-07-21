@@ -2,12 +2,14 @@ import Link from 'next/link'
 import { Prefetch } from '@edgio/react'
 import { createNextDataURL } from '@edgio/next/client'
 import Image from 'next/image'
+import { includeCacheMisses } from './prefetchConfig'
 
 const Item = ({ id, name, image }) => {
   return (
     <Link href={`/show/${id}`}>
       {/* Prefetch the JSON data for each show into the service worker cache when the link scrolls into the viewport so that navigation is instant */}
       <Prefetch
+        includeCacheMisses={includeCacheMisses}
         url={createNextDataURL({
           href: `/show/${id}`,
           routeParams: { id },

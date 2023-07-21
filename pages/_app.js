@@ -1,20 +1,23 @@
 import '@/styles/globals.css'
 import { useEffect } from 'react'
-import initRUM from 'edgio/rum'
+import initRUM from '../edgio/rum'
 import { useRouter } from 'next/router'
 import Navbar from '@/components/Navbar'
-import { useServiceWorker } from '@edgio/react'
+import { useDevtools, useServiceWorker } from '@edgio/react'
 
 // Include the RUM Analytics in the production build only
 if (typeof window !== 'undefined' && process.env.NODE_ENV === 'production') {
-  initRUM('42c2e33e-f277-483d-993b-7fb0ef907969')
+  initRUM('dc42b6a5-7e1c-4107-b691-9d1413727a02')
 }
 
 const MyApp = ({ Component, pageProps }) => {
   const router = useRouter()
 
   // Install the service worker to enable prefetching
-  useServiceWorker({ dev: false /* set to true to install the service worker in development mode */ })
+  useServiceWorker({ dev: true /* set to true to install the service worker in development mode */ })
+
+  // Uncomment the following to enable the Edgio Developer Tools
+  // useDevtools()
 
   useEffect(() => {
     // Enable devtools manually, instead of relying on defaults by Layer0
